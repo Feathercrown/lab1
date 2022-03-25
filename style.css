@@ -6,8 +6,31 @@ header {
     padding: 10px;
 }
 
+footer {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 30px;
+    padding-top: 15px;
+    font-family: Futura, Trebuchet MS;
+    font-weight: bold;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+}
+
 body {
-    background-color: #B0B0B0;
+    background-color: #A0A8B0;
+    position: relative; /* Hack to fix absolute positioning on the footer; it needs a parent with non-default positioning. */
+    min-height: 100vh;
+    margin: 0;
+}
+
+body::after { /* Also a footer hack. Why does CSS make it THIS HARD to make a footer? */
+  content: '';
+  display: block;
+  height: 30px; /* Same height as the footer */
 }
 
 h1 {
@@ -25,7 +48,7 @@ p {
     padding: 3px;
 }
 
-#WPI{
+#gompei-img {
     /*center the image*/
     display: block; 
     width: 50%;
@@ -39,20 +62,26 @@ p {
 }
 
 #main_nav li  {
-  list-style-type: none; /* remove bullet points */ 
+    list-style-type: none; /* remove bullet points */ 
 }
 
 #main_nav li a {
-   display: block;
-   text-decoration: none; /* remove underline */
-   border-radius: 10px;  /* rounded corners */
-   margin: 6px;
-   padding: 9px;
-   color: #222;
-   font-weight: bold;
+    display: block;
+    text-decoration: none; /* remove underline */
+    border-radius: 10px;  /* rounded corners */
+    margin: 6px;
+    padding: 9px;
+    color: #222;
+    font-weight: bold;
 
-   /* nice gradient shade on the buttons */
-   background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+    /* nice gradient shade on the buttons */
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
 
-   border: 1px solid #666; /* dark outline */
+    border: 1px solid #666; /* dark outline */
+}
+
+nav li:active {
+    background-color: #ccc;
+    background-image: none;
+    box-shadow: inset 0 3px 3px rgba(0, 0, 0, .2);
 }
