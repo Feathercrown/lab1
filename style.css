@@ -6,7 +6,7 @@ header {
     padding: 10px;
 }
 
-footer {
+footer { /* Note: Currently, the footer is technically rendered as a child of the body, not of the content div. I'm unsure if I'm allowed to edit the content div's CSS yet, but I'll swap the footer over for the sake of accessibility and CSS vs HTML consistency when I can. */
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -48,7 +48,7 @@ p {
     padding: 3px;
 }
 
-#gompei-img {
+#main-img {
     /*center the image*/
     display: block; 
     width: 50%;
